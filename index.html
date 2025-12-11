@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mini Sistema Spa de Mascotas</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ==================== LOGIN ==================== -->
+  <div id="login" class="modulo" style="display:block;">
+    <h2>Iniciar Sesión</h2>
+    <label>Usuario:</label>
+    <input id="user" type="text">
+
+    <label>Contraseña:</label>
+    <input id="pass" type="password">
+
+    <button onclick="iniciarSesion()">Ingresar</button>
+  </div>
+
+  <!-- ==================== NAVEGACIÓN ==================== -->
+  <div id="nav">
+    <button onclick="mostrar('registro')">Registro</button>
+    <button onclick="mostrar('agenda')">Agenda</button>
+    <button onclick="mostrar('carrito')">Carrito</button>
+    <button onclick="cerrarSesion()">Cerrar Sesión</button>
+  </div>
+
+  <!-- ==================== MÓDULO REGISTRO ==================== -->
+  <div id="registro" class="modulo">
+    <h2>Registro de Dueño</h2>
+    <input id="duenioNombre" placeholder="Nombre">
+    <input id="duenioTel" placeholder="Teléfono">
+    <input id="duenioCorreo" placeholder="Correo">
+    <button onclick="guardarDuenio()">Guardar Dueño</button>
+
+    <h2>Registro de Mascota</h2>
+    <input id="mascotaNombre" placeholder="Nombre">
+    <input id="mascotaEspecie" placeholder="Especie">
+    <input id="mascotaRaza" placeholder="Raza">
+    <button onclick="guardarMascota()">Guardar Mascota</button>
+  </div>
+
+  <!-- ==================== MÓDULO AGENDA ==================== -->
+  <div id="agenda" class="modulo">
+    <h2>Agendar Servicio</h2>
+    <input id="fecha" type="date">
+    <input id="hora" type="time">
+    <input id="mascotaServicio" placeholder="Mascota">
+
+    <select id="servicio">
+      <option>Aseo</option>
+      <option>Control Veterinario</option>
+      <option>Paseo</option>
+    </select>
+
+    <button onclick="guardarCita()">Agendar</button>
+
+    <h3>Citas Guardadas:</h3>
+    <div id="listaCitas"></div>
+  </div>
+
+  <!-- ==================== MÓDULO CARRITO ==================== -->
+  <div id="carrito" class="modulo">
+    <h2>Catálogo</h2>
+    <div id="catalogo"></div>
+
+    <h2>Carrito</h2>
+    <div id="listaCarrito"></div>
+
+    <h3>Total: <span id="total">0</span> Bs</h3>
+  </div>
+  <script src="index.js"></script>
+
+</body>
+</html>
